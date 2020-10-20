@@ -57,10 +57,6 @@ func TestGetAllTransDetail(t *testing.T) {
 		t.Fatalf("test failed,err:%v", err)
 	}
 
-	for _, v := range res {
-		t.Logf("result:%+v", v)
-	}
-
 	t.Log(strings.Repeat("=", 50))
 
 	// 全排列数据

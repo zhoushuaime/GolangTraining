@@ -3,7 +3,6 @@ package tool
 import (
 	"fmt"
 	"strings"
-	"sync"
 	"testing"
 )
 
@@ -28,16 +27,6 @@ func TestPermutation(t *testing.T) {
 	}
 
 	fmt.Println(strings.Repeat("=", 20))
-	wg := sync.WaitGroup{}
-	wg.Add(2)
-
-	for i := 0; i < 2; i++ {
-		go func() {
-			defer wg.Done()
-
-		}()
-	}
-	wg.Wait()
 }
 
 func TestGetCurrentDir(t *testing.T) {
