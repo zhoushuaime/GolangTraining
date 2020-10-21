@@ -171,7 +171,7 @@ func main() {
 			case 0:
 				handle(trans1[0].TransNum, len(trans1), clientChan1)
 			case 1:
-				handle(trans1[0].TransNum, len(trans2), clientChan2)
+				handle(trans2[0].TransNum, len(trans2), clientChan2)
 			}
 
 		}(i)
