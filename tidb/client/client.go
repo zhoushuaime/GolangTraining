@@ -34,7 +34,7 @@ type TransClient struct {
 type TransDetail struct {
 	Trans    string
 	ClientId int
-	RandNum  int64
+	TransNum int
 }
 
 // NewTransClient ...
@@ -82,11 +82,11 @@ func (trans *TransClient) GetTransDetail() ([]TransDetail, error) {
 	}
 	transSql := strings.Split(res, "\n")
 
-	for _, sql := range transSql {
+	for i, sql := range transSql {
 		transDetail := TransDetail{}
 		transDetail.Trans = sql
 		transDetail.ClientId = trans.ClientId
-		transDetail.RandNum = tool.RandNum()
+		transDetail.TransNum = i + 1
 		result = append(result, transDetail)
 	}
 

@@ -5,3 +5,9 @@ create table test(
                      b int not null,
                      PRIMARY key(id)
 )engine=INNODB;
+
+
+INSERT INTO test(a,b) VALUES(0,2);
+INSERT INTO test(a,b) VALUES(0,4);
+INSERT INTO test(a,b) VALUES(0,7);
+INSERT INTO test(a,b) VALUES(0,8);

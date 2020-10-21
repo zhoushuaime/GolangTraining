@@ -5,7 +5,6 @@ import (
 	"strings"
 	"sync"
 	"testing"
-	"zhoushuai.com/GolangTraining/tidb/tool"
 )
 
 // TestGetTransDetail ...
@@ -57,18 +56,20 @@ func TestGetAllTransDetail(t *testing.T) {
 		t.Fatalf("test failed,err:%v", err)
 	}
 
-	t.Log(strings.Repeat("=", 50))
-
 	// 全排列数据
-	input := make([]interface{}, 0)
-	for i := 0; i < len(res); i++ {
-		input = append(input, res[i])
-	}
+	//input := make([]interface{}, 0)
+	//for i := 0; i < len(res); i++ {
+	//	input = append(input, res[i])
+	//}
 
-	out := tool.Permutation(input)
+	//out := tool.Permutation(input)
 
-	for k, v := range out {
-		t.Logf("k:%v,%+v", k, v)
+	for {
+		for k, v := range res {
+			t.Logf("k:%v,%+v", k, v)
+		}
+		t.Log(strings.Repeat("=", 50))
+
 	}
 
 }
