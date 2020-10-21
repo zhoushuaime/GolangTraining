@@ -152,7 +152,6 @@ func main() {
 					temp.CurrentCount = value.CurrentCount + 1
 
 					if res.TransNum > minVersion {
-						temp.CurrentVersion = minVersion
 						clientChan <- res
 						return
 					}
