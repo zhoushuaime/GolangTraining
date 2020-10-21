@@ -165,8 +165,8 @@ func main() {
 
 	// 模拟两个客户端，根据clientId区分
 	for i := 0; i < 2; i++ {
-		go func(clientId int) {
-			switch clientId {
+		go func(clientId int) { // 这里根据传入的index来简单运行两个client，clientId并非为1就是client1，为2就是client2。
+			switch clientId {  //  当为0时运行client1，为1时运行client2，也可以看成是起了2个goroutine来运行2个client
 			case 0:
 				handle(trans1[0].TransNum, len(trans1), clientChan1)
 			case 1:
