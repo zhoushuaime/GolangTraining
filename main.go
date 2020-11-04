@@ -1,32 +1,29 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
-	"io"
-	"os"
-	"sync"
-	"time"
 )
 
-type MS struct {
-	lock sync.RWMutex
-	M    map[string]interface{}
-}
-
-type TimeConf struct {
-	Timeout time.Duration `json:"timeout"`
-}
-
 func main() {
-	n, err := fmt.Fprintln(&UpperWriter{os.Stdout}, "hello","world")
-	fmt.Printf("n:%v,err:%v", n, err)
+
+	input := []int{1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7}
+	res := findSingleNumber(input)
+	fmt.Println(res)
+
 }
 
-type UpperWriter struct {
-	io.Writer
-}
+// findSingleNumber ...
+func findSingleNumber(input []int) int {
 
-func (upperWriter *UpperWriter) Write(p []byte) (n int, err error) {
-	return upperWriter.Writer.Write(bytes.ToUpper(p))
+	if len(input) == 0 {
+		return -1
+
+	}
+	res := 0
+
+	for _, v := range input {
+		res = res ^ v
+	}
+
+	return res
 }
